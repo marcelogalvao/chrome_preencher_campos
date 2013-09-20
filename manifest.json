@@ -1,0 +1,26 @@
+﻿{
+  "manifest_version": 2,
+  "name": "Expandir Youtube",
+  "version": "1.0",
+  "description": "Expandir vídeo do Youtube",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Expandir vídeo do Youtube"
+  },
+  "icons": {
+    "19": "icon_19.png",
+    "32": "icon_32.png",
+    "64": "icon_64.png",
+    "128": "icon_128.png"
+  },
+  "background": {
+      "scripts": [
+          "background.js"
+      ]
+  },
+  "permissions": [
+    "tabs", 
+    "http://*/*", 
+    "https://*/*"
+  ]
+}
