@@ -1,8 +1,8 @@
 ﻿{
   "manifest_version": 2,
   "name": "Preencher campos",
-  "version": "1.0",
-  "description": "Preencher os campos dos formulários da página.",
+  "version": "1.1",
+  "description": "Preencher os campos dos formulários da página automaticamente.",
   "browser_action": {
     "default_icon": "icon.png",
     "default_title": "Preencher campos"

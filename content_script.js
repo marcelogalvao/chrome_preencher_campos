@@ -12,7 +12,7 @@ for(var x = 0; x < total; x++){
 	var campo = campos[x];	
 
 	// se for do tipo text ou password
-	if (campo.type == 'text' || campo.type == 'password'){
+	if (campo.type === 'text' || campo.type === 'password' || campo.type === 'email'){
 		
 		// conta para caso o campo seja um array
 		arrCampo = document.getElementsByName(campo.name);
@@ -21,13 +21,18 @@ for(var x = 0; x < total; x++){
 		for(var i = 0; i < totalCampo; i++){
 			
 			// se o campo estiver vazio
-			if (arrCampo[i].value == '' || arrCampo[i].value == false || arrCampo[i].value == '0'){
+			if (arrCampo[i].value == false || arrCampo[i].value == arrCampo[i].defaultValue){
 				
-				var str = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
+				// se for email
+				if (arrCampo[i].type === "email" || arrCampo[i].name === "email" || arrCampo[i].name === "e-mail" || arrCampo[i].name === "mail")
+					var str = 'email@domain.com';
+				else
+					var str = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
 
-				// if ( arrCampo[i].maxLength > 0 && arrCampo[i].maxLength < 57)
-				// 	arrCampo[i].value = str.substr(0, arrCampo[i].maxLength);
-				// else
+				// se tiver tamanho maximo
+				if ( arrCampo[i].maxLength !== 'undefined')
+					arrCampo[i].value = str.substr(0, arrCampo[i].maxLength-1);
+				else
 					arrCampo[i].value = str;
 			}
 			
@@ -44,7 +49,7 @@ for(var x = 0; x < total; x++){
 		for(var i = 0; i < totalCampo; i++){
 			
 			// se o campo estiver vazio
-			if (arrCampo[i].value == '' || arrCampo[i].value == false || arrCampo[i].value !== '0'){
+			if (arrCampo[i].value == false || arrCampo[i].value == arrCampo[i].defaultValue){
 				
 				arrCampo[i].value = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, eveniet, nesciunt, explicabo, molestias rerum voluptatem harum consequuntur facere saepe ipsam dolorum voluptate impedit! Eveniet quisquam rem molestiae libero illum natus.';
 			}
@@ -62,7 +67,7 @@ for(var x = 0; x < total; x++){
 		for(var i = 0; i < totalCampo; i++){
 			
 			// se o campo estiver vazio
-			if (arrCampo[i].value == '' || arrCampo[i].value == false || arrCampo[i].value !== '0'){
+			if (arrCampo[i].value == false || arrCampo[i].value == arrCampo[i].defaultValue){
 				
 				for ( var y = 0; y < arrCampo[i].options.length; y++ ){
 
