@@ -26,12 +26,12 @@ for(var x = 0; x < total; x++){
 				// se for email
 				if (arrCampo[i].type === "email" || arrCampo[i].name === "email" || arrCampo[i].name === "e-mail" || arrCampo[i].name === "mail") {
 					var str = 'email@domain.com';
-				}
+				
 				// se for telefone ou número.
-				else if(arrCampo[i].type === "tel" || arrCampo[i].type === "number" ) {
+				}else if(arrCampo[i].type === "tel" || arrCampo[i].type === "number" ) {
 					var str = '9999999999';
-				}
-				else {
+				
+				}else {
 					var str = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.';
 				}
 
