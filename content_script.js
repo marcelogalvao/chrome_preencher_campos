@@ -17,7 +17,7 @@ for(var x = 0; x < total; x++){
 		// conta para caso o campo seja um array
 		arrCampo = document.getElementsByName(campo.name);
 		totalCampo = arrCampo.length;
-
+		
 		for(var i = 0; i < totalCampo; i++){
 
 			// se o campo estiver vazio
@@ -89,6 +89,9 @@ for(var x = 0; x < total; x++){
 	//se for do tipo radio
 	}else if(campo.type == 'radio'){
 
+		// se nao tiver campo name
+		if (!campo.name) continue;
+
 		//conta a qtd do radio ou checkbox
 		arrCampo = document.getElementsByName(campo.name);
 		totalCampo = arrCampo.length;
@@ -112,6 +115,9 @@ for(var x = 0; x < total; x++){
 
 	//se for do tipo checkbox
 	}else if(campo.type == 'checkbox'){
+
+		// se nao tiver campo name
+		if (!campo.name) continue;
 
 		//conta a qtd do radio ou checkbox
 		arrCampo = document.getElementsByName(campo.name);
